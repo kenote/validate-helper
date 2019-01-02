@@ -64,7 +64,7 @@ var validMessage = function (rule, message) {
     if (message === void 0) { message = ''; }
     return (__assign({ message: message }, lodash_1.pick(rule, ['message', 'code'])));
 };
-var validRule = function (value, rules) {
+exports.validRule = function (value, rules) {
     var e_2, _a;
     try {
         for (var rules_1 = __values(rules), rules_1_1 = rules_1.next(); !rules_1_1.done; rules_1_1 = rules_1.next()) {
@@ -117,7 +117,7 @@ exports.filterData = function (filters, options, done) {
             info[item.key] = item.value;
             if (lodash_1.isObject(item.value)) {
                 for (var key in item.value) {
-                    var itemValid = validRule(item.value[key], item.rules);
+                    var itemValid = exports.validRule(item.value[key], item.rules);
                     if (itemValid) {
                         if (itemValid.message) {
                             itemValid = __assign({}, itemValid, { message: util_1.format(itemValid.message, util_1.format(item.label || '', key)) });
@@ -127,7 +127,7 @@ exports.filterData = function (filters, options, done) {
                 }
             }
             else {
-                var itemValid = validRule(item.value, item.rules);
+                var itemValid = exports.validRule(item.value, item.rules);
                 if (itemValid) {
                     if (itemValid.message) {
                         itemValid = __assign({}, itemValid, { message: util_1.format(itemValid.message, item.label || '') });
