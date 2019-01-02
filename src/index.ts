@@ -37,7 +37,7 @@ const validMessage = (rule: Rule, message: string = ''): errorInfo => (
   }
 )
 
-const validRule = (value: any, rules: Rule[]): errorInfo | null => {
+export const validRule = (value: any, rules: Rule[]): errorInfo | null => {
   for (let rule of rules) {
     if (rule.required && isNull(value)) {
       return validMessage(rule, 'Value cannot be empty.')

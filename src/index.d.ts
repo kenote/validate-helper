@@ -1,3 +1,4 @@
+export { isNull, checkLength, isPattern, validRule, filterData, asyncFilterData } from './'
 
 export interface errorInfo {
   code: number;
@@ -19,7 +20,7 @@ export interface Filter {
   label?: string;
 }
 
-interface Pick extends errorInfo {
+export interface Pick extends errorInfo {
   data: Array<string | number | boolean>;
 }
 
