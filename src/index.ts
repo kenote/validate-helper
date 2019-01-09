@@ -45,7 +45,7 @@ export const validRule = (value: any, rules: Rule[]): errorInfo | null => {
     if (rule.required && isNull(value)) {
       return validMessage(rule, 'Value cannot be empty.')
     }
-    if (rule.pattern && !isPattern(value, rule)) {
+    if ((rule.pattern || rule.validator) && !isPattern(value, rule)) {
       return validMessage(rule, 'Wrong value format.')
     }
   }

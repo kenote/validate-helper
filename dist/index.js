@@ -75,7 +75,7 @@ exports.validRule = function (value, rules) {
             if (rule.required && exports.isNull(value)) {
                 return validMessage(rule, 'Value cannot be empty.');
             }
-            if (rule.pattern && !exports.isPattern(value, rule)) {
+            if ((rule.pattern || rule.validator) && !exports.isPattern(value, rule)) {
                 return validMessage(rule, 'Wrong value format.');
             }
         }
