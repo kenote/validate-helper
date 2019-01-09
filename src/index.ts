@@ -16,6 +16,9 @@ export const checkLength = (str: string): number => {
 }
 
 export const isPattern = (value: string, rule: Rule): boolean => {
+  if (rule.validator) {
+    return rule.validator(value)
+  }
   let regExp: RegExp = isRegExp(rule.pattern) ? rule.pattern : new RegExp(rule.pattern || '')
   let valid: boolean = regExp.test(value)
   if (valid) {

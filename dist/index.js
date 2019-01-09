@@ -47,6 +47,9 @@ exports.checkLength = function (str) {
     return size;
 };
 exports.isPattern = function (value, rule) {
+    if (rule.validator) {
+        return rule.validator(value);
+    }
     var regExp = util_1.isRegExp(rule.pattern) ? rule.pattern : new RegExp(rule.pattern || '');
     var valid = regExp.test(value);
     if (valid) {

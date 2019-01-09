@@ -10,6 +10,7 @@ export interface Rule extends errorInfo {
   min?: number;
   max?: number;
   required?: boolean;
+  validator?: (value: any) => boolean
 }
 
 export interface Filter {
