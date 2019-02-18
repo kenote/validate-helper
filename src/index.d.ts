@@ -1,32 +1,12 @@
+import { errorInfo as __errorInfo, Rule as __Rule, Filter as __Filter, Pick as __Pick, Options as __Options } from './'
 export { isNull, checkLength, isPattern, validRule, filterData, asyncFilterData } from './'
 
-export interface errorInfo {
-  code: number;
-  message: string;
-}
+export declare interface errorInfo extends __errorInfo {}
 
-export interface Rule extends errorInfo {
-  pattern?: string | RegExp;
-  min?: number;
-  max?: number;
-  required?: boolean;
-  validator?: (value: any) => boolean
-}
+export declare interface Rule extends __Rule {}
 
-export interface Filter {
-  key: string;
-  rules: Rule[];
-  value: any;
-  ignore?: boolean;
-  label?: string;
-}
+export declare interface Filter extends __Filter {}
 
-export interface Pick extends errorInfo {
-  data: Array<string | number | boolean>;
-}
+export declare interface Pick extends __Pick {}
 
-export interface Options {
-  picks: Pick[];
-}
-
-
+export declare interface Options extends __Options {}

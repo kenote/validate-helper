@@ -1,6 +1,6 @@
 {
   "name": "kenote-validate-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validate Helper.",
   "main": "./dist/index.js",
   "typings": "./src/index.d.ts",

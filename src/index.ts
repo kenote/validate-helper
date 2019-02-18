@@ -1,6 +1,34 @@
 import { isRegExp, isUndefined, format } from 'util'
 import { isObject, pick } from 'lodash'
-import { errorInfo, Rule, Filter, Options } from './index.d'
+
+export interface errorInfo {
+  code: number
+  message: string
+}
+
+export interface Rule extends errorInfo {
+  pattern?: string | RegExp
+  min?: number
+  max?: number
+  required?: boolean
+  validator?: (value: any) => boolean
+}
+
+export interface Filter {
+  key: string
+  rules: Rule[]
+  value: any
+  ignore?: boolean
+  label?: string
+}
+
+export interface Pick extends errorInfo {
+  data: Array<string | number | boolean | undefined>
+}
+
+export interface Options {
+  picks: Pick[]
+}
 
 export const isNull = (value: any): boolean => String(value || '').length === 0 && value !== 0
 
@@ -52,7 +80,7 @@ export const validRule = (value: any, rules: Rule[]): errorInfo | null => {
   return null
 }
 
-const chooseOne = (data: Array<string | number | boolean>): boolean => {
+const chooseOne = (data: Array<string | number | boolean | undefined>): boolean => {
   let result: boolean = true
   for (let item of data) {
     result = isUndefined(item)
