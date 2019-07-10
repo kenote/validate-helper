@@ -1,9 +1,17 @@
 # validate-helper
+
 Validate Helper.
+
+[![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status][travis-image]][travis-url]
+[![Gratipay][licensed-image]][licensed-url]
 
 ## Installation
 
 ```bash
+$ npm install kenote-validate-helper
+#
 $ yarn add kenote-validate-helper
 ```
 
@@ -77,3 +85,12 @@ async login () {
 ## License
 
 this repo is released under the [MIT License](https://github.com/kenote/validate-helper/blob/master/LICENSE).
+
+[npm-image]: https://img.shields.io/npm/v/kenote-validate-helper.svg
+[npm-url]: https://www.npmjs.com/package/kenote-validate-helper
+[downloads-image]: https://img.shields.io/npm/dm/kenote-validate-helper.svg
+[downloads-url]: https://www.npmjs.com/package/kenote-validate-helper
+[travis-image]: https://travis-ci.com/kenote/validate-helper.svg?branch=master
+[travis-url]: https://travis-ci.com/kenote/validate-helper
+[licensed-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[licensed-url]: https://github.com/kenote/validate-helper/blob/master/LICENSE

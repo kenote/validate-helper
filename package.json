@@ -1,28 +1,33 @@
 {
   "name": "kenote-validate-helper",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Validate Helper.",
-  "main": "./dist/index.js",
-  "typings": "./src/index.d.ts",
+  "main": "dist/index.js",
+  "typings": "types/index.d.ts",
   "repository": "https://github.com/kenote/validate-helper.git",
   "author": "thondery <thondery@163.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "test": "jest",
+    "build": "rm -rf ./dist && tsc",
+    "postinstall": "npm run build"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.119",
-    "@types/node": "^10.12.18",
-    "typescript": "^3.2.2"
+    "@types/jest": "^24.0.15",
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.6.1",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   },
-  "dependencies": {
-    "lodash": "^4.17.11"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">8.0.0"
   },
   "keywords": [
     "validate",
+    "filter",
     "helper",
     "assistant",
     "typescript"
