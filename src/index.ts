@@ -161,10 +161,10 @@ const isMaskWord = (value: string, rule: Rule) => {
 const isLength = (value: string, rule: Rule): boolean => {
   let valid: boolean = true
   let size: number = checkLength(value)
-    if (rule.min && size < rule.min) {
+  if (rule.min && size < rule.min) {
       valid = false
     }
-    if (rule.max && size > rule.max) {
+  if (rule.max && size > rule.max) {
       valid = false
     }
   return valid
@@ -176,12 +176,7 @@ const isLength = (value: string, rule: Rule): boolean => {
  * @param message string
  * @returns errorInfo
  */
-const validMessage = (rule: Rule, message: string = ''): errorInfo => (
-  {
-    message,
-    ...pick(rule, ['message', 'code'])
-  }
-)
+const validMessage = (rule: Rule, message: string = ''): errorInfo => Object.assign({ message }, pick(rule, ['message', 'code']))
 
 /**
  * 判断多个可忽略字段，必选一个有效值

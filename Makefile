@@ -12,9 +12,11 @@ publish:
 	@npm publish
 
 install:
-	@npm set registry https://registry.npm.taobao.org
 	@npm install
 	
 update:
-	@npm set registry https://registry.npm.taobao.org
 	@npm update
+
+reinstall:
+	@make clear
+	@make install

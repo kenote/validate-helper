@@ -1,6 +1,6 @@
 {
   "name": "kenote-validate-helper",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validate Helper.",
   "main": "dist/index.js",
   "typings": "types/index.d.ts",
@@ -13,13 +13,13 @@
     "postinstall": "npm run build"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "@types/lodash": "^4.14.136",
-    "@types/node": "^12.6.1",
-    "jest": "^24.8.0",
-    "ts-jest": "^24.0.2",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.3"
+    "@types/jest": "^24.9.1",
+    "@types/lodash": "^4.14.154",
+    "@types/node": "^12.12.43",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.3.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.9.3"
   },
   "dependencies": {},
   "engines": {
